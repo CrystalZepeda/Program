@@ -12,7 +12,7 @@
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="ProgramApp" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="UIViewController-BYZ-38-t0r" id="BYZ-38-t0r" customClass="ViewController" customModule="ProgramApp" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -59,9 +59,7 @@
                                     <color key="titleColor" red="0.3791516721" green="0.63743132349999998" blue="0.55589598419999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <connections>
-                                    <segue destination="33i-14-vo1" kind="popoverPresentation" identifier="logInToSignUp" popoverAnchorView="xf5-kz-UQW" id="SA4-I0-gT6">
-                                        <popoverArrowDirection key="popoverArrowDirection" up="YES" down="YES" left="YES" right="YES"/>
-                                    </segue>
+                                    <segue destination="33i-14-vo1" kind="presentation" id="3a4-o3-wqu"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4Rf-z7-XA2">
@@ -84,12 +82,13 @@
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </view>
+                    <navigationItem key="navigationItem" id="wSf-5P-r6D"/>
                     <connections>
                         <outlet property="FBLoginButton" destination="4Rf-z7-XA2" id="RHf-42-TrB"/>
                         <outlet property="emailAddressLoginButton" destination="TUI-ZA-gAo" id="pB8-2d-XaM"/>
                         <outlet property="logInButton" destination="hGC-uI-d8a" id="uco-fM-1Ha"/>
                         <outlet property="passwordLoginButton" destination="3XF-ep-5wq" id="3Lx-3F-UTQ"/>
-                        <segue destination="KEY-R1-vfC" kind="presentation" identifier="logInToHome" id="YXp-EU-bDg"/>
+                        <segue destination="f0a-bf-dsv" kind="presentation" identifier="logInToHome" id="vfB-cL-uJx"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -153,16 +152,29 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="words" autocorrectionType="no" spellCheckingType="no"/>
                             </textField>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="j1B-11-mMF">
+                                <rect key="frame" x="16" y="20" width="46" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Back">
+                                    <color key="titleColor" red="0.3791516721" green="0.63743132349999998" blue="0.55589598419999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <segue destination="BYZ-38-t0r" kind="popoverPresentation" popoverAnchorView="j1B-11-mMF" id="afr-Z4-sJO">
+                                        <popoverArrowDirection key="popoverArrowDirection" up="YES" down="YES" left="YES" right="YES"/>
+                                    </segue>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
+                    <navigationItem key="navigationItem" id="cKu-A1-6Eg"/>
                     <connections>
                         <outlet property="confirmPasswordSignUpTextField" destination="bAT-9A-ys8" id="1Sn-Er-YwU"/>
                         <outlet property="emailAddressSignUpTextField" destination="SQt-8h-HTT" id="Yqh-th-1xv"/>
                         <outlet property="nameSignUpTextField" destination="7LF-CZ-Vjf" id="QRM-2E-7xy"/>
                         <outlet property="passwordSignUpTextField" destination="v9h-5H-H6d" id="Hlk-eh-7UK"/>
                         <outlet property="signUpButton" destination="kVn-XS-ggK" id="GyA-wF-BEL"/>
-                        <segue destination="KEY-R1-vfC" kind="presentation" identifier="signUpToHome" id="SAL-nB-vcK"/>
+                        <segue destination="f0a-bf-dsv" kind="presentation" identifier="signUpToHome" id="JHp-t5-dEu"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2Ut-Hn-5gh" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -170,15 +182,15 @@
             <point key="canvasLocation" x="884" y="132"/>
         </scene>
         <!--Home-->
-        <scene sceneID="Nwp-so-uir">
+        <scene sceneID="drc-0P-DNm">
             <objects>
-                <viewControllerPlaceholder storyboardName="Home" id="KEY-R1-vfC" sceneMemberID="viewController"/>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="KaZ-PH-YLs" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <viewControllerPlaceholder storyboardName="Home" id="f0a-bf-dsv" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="SGA-hl-fIb" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1726" y="111"/>
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="YXp-EU-bDg"/>
+        <segue reference="vfB-cL-uJx"/>
     </inferredMetricsTieBreakers>
 </document>
