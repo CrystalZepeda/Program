@@ -14,5 +14,6 @@ target 'ProgramApp' do
   pod 'FacebookCore'
   pod 'FacebookLogin'
   pod 'FacebookShare'
-
+  pod ‘GooglePlaces’
+  pod ‘GoogleMaps’
 end

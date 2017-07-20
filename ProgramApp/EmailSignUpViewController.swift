@@ -23,13 +23,16 @@ class EmailSignUpViewController: UIViewController {
     @IBOutlet weak var confirmPasswordSignUpTextField: UITextField!
     
     @IBOutlet weak var signUpButton: UIButton!
-   
+    
+    
+    @IBOutlet weak var emailLabel: UILabel!
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
    
     }
     
-   
     @IBAction func signUpButtonTapped(_ sender: Any) {
         
         handleRegister()
@@ -71,20 +74,17 @@ func isValidEmailAddress(emailAddressString: String) -> Bool {
         returnValue = false
     }
     
-    return  returnValue
+    return returnValue
 }
 
     func handleRegister() {
         
-        
-        guard let email = emailAddressSignUpTextField.text, let password = passwordSignUpTextField.text, let name = nameSignUpTextField.text, let confirmPassword = confirmPasswordSignUpTextField.text
-            
+        guard let email = emailAddressSignUpTextField.text, let password = passwordSignUpTextField.text, let name = nameSignUpTextField.text, let confirmPassword = confirmPasswordSignUpTextField.text, let receivedP = emailAddressSignUpTextField.text
             else {
                 
                 print("Invalid form")
                 return
         }
-        
         
     if emailAddressSignUpTextField.text == "" || nameSignUpTextField.text == "" {
         
@@ -149,8 +149,6 @@ func isValidEmailAddress(emailAddressString: String) -> Bool {
             let values = ["name": name, "email": email]
             
             
-            
-            
             usersReference.updateChildValues(values, withCompletionBlock: { (error, ref) in
                 
                 if error != nil {
@@ -160,7 +158,7 @@ func isValidEmailAddress(emailAddressString: String) -> Bool {
                 }
                 print("Saved user successfully into Firebase")
                 self.performSegue(withIdentifier: "signUpToHome", sender: self)
-                
+
                 
             })
             
